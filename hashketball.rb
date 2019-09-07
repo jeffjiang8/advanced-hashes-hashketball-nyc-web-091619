@@ -133,7 +133,9 @@ def team_colors (team_name)
   end 
 end 
 
-def team_names ()
+def team_names
+  game_hash.each do |_place, team|
+    return game_hash[]
 
 
 
