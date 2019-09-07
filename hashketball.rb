@@ -129,7 +129,7 @@ end
 
 def team_color (team_name)
   game_hash.each do |_place, team|
-    
+    return team_name[:color] if team[]
 
 
 
