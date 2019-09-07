@@ -107,7 +107,7 @@ end
 
 def number_of_points_scored (get_player_name)
   game_hash.each do |_place, team|
-    team.each do |
+    team.each do |attribute,
 
 
 
