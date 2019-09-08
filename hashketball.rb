@@ -227,7 +227,7 @@ def winning_team
   scores = { 'Brooklyn Nets' => 0, 'Charlotte Hornets' => 0 }
   game_hash.each do |_team, game_data|
     game_data[:players].each do |player|
-      scores[game_data[:team_name]] += iterate_through_players_for(player[:player_name], :points)
+      scores[game_data[:team_name]] += (player[:player_name], :points)
     end
   end
   scores.max_by { |_k, v| v }.first
