@@ -200,5 +200,28 @@ def big_shoe_rebounds
   num_rebounds
 end 
 
+def player_with_most_of (statistic)
+  player_name = nil 
+  amount_of_stat = 0 
+  game_hash.each do |_team, game_data|
+    game_data[:players].each do |player|
+      if player[statistic].is_a? String
+        if player[statistic].length > amount_of_stat
+          amount_of_stat = player[statistic].length
+          player_name = player[:player_name]
+        end 
+        elsif player[statistic] > amount_of_stat
+        amount_of_stat = player[statistic]
+        player_name = player[:player_name]
+      end 
+    end 
+  end 
+  player_name
+end 
+
+def most_points_scored
+  player_with_most_of(:points)
+end 
+
 
 
