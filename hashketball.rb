@@ -224,7 +224,7 @@ def most_points_scored
 end 
 
 def winning_team
-teams.max_by{ |t| total_points(t) }[:team_name]
+  teams.max_by{ |t| total_points(t) }[:team_name]
 end
 
 def player_with_longest_name
