@@ -224,8 +224,15 @@ def most_points_scored
 end 
 
 def winning_team
-  teams.max_by{ |t| total_points(t) }[:team_name]
+  scores = { 'Brooklyn Nets' => 0, 'Charlotte Hornets' => 0 }
+  game_hash.each do |_team, game_data|
+    game_data[:players].each do |player|
+      scores[game_data[:team_name]] += iterate_through_players_for(player[:player_name], :points)
+    end
+  end
+  scores.max_by { |_k, v| v }.first
 end
+
 
 def player_with_longest_name
   player_with_most_of(:player_name)
