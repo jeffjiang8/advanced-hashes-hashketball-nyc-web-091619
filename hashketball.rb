@@ -226,6 +226,7 @@ end
 def winning_team
   scores = {"Brooklyn Nets" => 0, "Charlotte Hornets" => 0}
   game_hash.each do |_team, game_data|
+    game_data
     scores[game_data[:team_name]] += iterate_thru_players(player[:player_name], :points)
   end 
 end 
