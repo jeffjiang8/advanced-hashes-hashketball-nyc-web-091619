@@ -158,7 +158,7 @@ def player_stats (get_player_name)
   game_hash.collect do |place, team|
     team.each do |attribute, _data|
       next unless attribute == :players 
-      game_hash[place][attribute].each do |players|
+      game_hash[place][attribute].each do |player|
         next unless player[:player_name] == get_player_name
         stats = player.delete_if do |k, _v|
           k == :player_name
