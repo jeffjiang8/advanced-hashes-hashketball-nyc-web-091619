@@ -230,7 +230,7 @@ def winning_team
     scores[game_data[:team_name]] += iterate_thru_players(player[:player_name], :points)
     end 
   end 
-  scores.max
+  scores.max_by {|k,v|
 end 
 
 
